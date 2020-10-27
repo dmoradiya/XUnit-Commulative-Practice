@@ -9,26 +9,17 @@ namespace XUnitCumulativePractice
         ✅Is an integer (numeric, will safely parse to int).
         ✅Is between 1 and 100.
         ✅Is even.
-        ✅If it is, return true. Otherwise return false.
-        Create test cases in Program_Tests.cs that will test each of the requirements of ValidateOneToOneHundredEven().
-        This is to say, we should be testing (Theories):
+        ✅If it is, return true. Otherwise return false.       
 
      */
     public class Program
     {
         public static void Main(string[] args)
         {
-            ValidateOneToOneHundredEven("1");
-            ValidateOneToOneHundredEven("100");
-            ValidateOneToOneHundredEven("0");
-            ValidateOneToOneHundredEven("101");
-            ValidateOneToOneHundredEven("50");
-            ValidateOneToOneHundredEven("-2");
+           
                                    
         }
-
        
-
         public static bool ValidateOneToOneHundredEven(string stringInput)
         {
             bool valid = false;
