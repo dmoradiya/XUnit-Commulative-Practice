@@ -5,11 +5,11 @@ namespace XUnitCumulativePractice
 {
     /*
         ✅Create a method in XUnitCumulativePractice.Program.cs called ValidateOneToOneHundredEven() that will accept a string (“1” or “20” etc.)  as a parameter.
-        Validate that the string:
-        Is an integer (numeric, will safely parse to int).
-        Is between 1 and 100.
-        Is even.
-        If it is, return true. Otherwise return false.
+        ✅Validate that the string:
+        ✅Is an integer (numeric, will safely parse to int).
+        ✅Is between 1 and 100.
+        ✅Is even.
+        ✅If it is, return true. Otherwise return false.
         Create test cases in Program_Tests.cs that will test each of the requirements of ValidateOneToOneHundredEven().
         This is to say, we should be testing (Theories):
 
@@ -18,7 +18,6 @@ namespace XUnitCumulativePractice
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             ValidateOneToOneHundredEven("1");
             ValidateOneToOneHundredEven("100");
             ValidateOneToOneHundredEven("0");
@@ -27,30 +26,42 @@ namespace XUnitCumulativePractice
             ValidateOneToOneHundredEven("-2");
                                    
         }
+
+       
+
         public static bool ValidateOneToOneHundredEven(string stringInput)
         {
             bool valid = false;
-
-            int intInput = int.Parse(stringInput);
-            if (intInput > 0 && intInput <= 100)
+            try
             {
-                if (intInput % 2 == 0)
+                int intInput = int.Parse(stringInput);
+                if (intInput > 0 && intInput <= 100)
                 {
-                    Console.WriteLine("even");
-                    valid = true;
+                    if (intInput % 2 == 0)
+                    {
+                        Console.WriteLine("even");
+                        valid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("odd");
+                        valid = false;
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("odd");
+                    Console.WriteLine("Please enter any number in between 1 to 100");
                     valid = false;
                 }
+                return valid;
             }
-            else
+            catch (System.FormatException)
             {
-                Console.WriteLine("Please enter any number in between 1 to 100");
-                valid = false;
+
+                return false;
             }
-            return valid;
+
+            
         }
 
     }
