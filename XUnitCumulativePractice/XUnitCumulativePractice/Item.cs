@@ -17,7 +17,7 @@ namespace XUnitCumulativePractice
 
         public Item()
         {
-
+            Name = "Apple";
         }
         public Item(string name)
         {

@@ -20,9 +20,9 @@ namespace XUnitCumulativePractice
         {
             Contents.Add(item);
         }
-        public void RemoveItem(Item item)
+        public void RemoveItem()
         {
-            Contents.Remove(item);
+            Contents.RemoveAt(Contents.Count-1);
         }
 
         public void DisplayOutput()
