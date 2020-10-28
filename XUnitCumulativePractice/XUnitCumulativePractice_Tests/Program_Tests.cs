@@ -21,7 +21,7 @@ namespace XUnitCumulativePractice_Tests
         [InlineData("2-1",false)]
         [InlineData("$21",false)]
 
-        //###################### Test Data for Valid Integer In Between 0 - 100 ############################
+        //###################### Test Data for Valid Integer In Between 0 - 100 And EVEN ############################
         [InlineData("-1", false)]
         [InlineData("0", false)]
         [InlineData("1", false)]
@@ -30,7 +30,7 @@ namespace XUnitCumulativePractice_Tests
         [InlineData("100", true)]
         [InlineData("101", false)]
 
-        //###################### Test Data for Valid Integer In Between 0 - 100 And Even ############################
+        //###################### Test Data for Even ############################
         [InlineData("10", true)]
         [InlineData("40", true)]
         [InlineData("90", true)]

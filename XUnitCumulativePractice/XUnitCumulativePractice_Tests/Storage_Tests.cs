@@ -14,8 +14,8 @@ namespace XUnitCumulativePractice_Tests
             (Assert) Assert that the list has a count of 1
             ✅(Assert) Assert that the item in Storage.Contents is “TestItem”.
             ✅Test the removal of items (Fact):	
-            (Arrange) Create a Storage prepopulated with 5 Items. 
-            (Arrange) Create an object reference variable to the last item in the Contents list.
+            ✅(Arrange) Create a Storage prepopulated with 5 Items. 
+            ✅(Arrange) Create an object reference variable to the last item in the Contents list.
             (Act) Run RemoveItem() on the Storage. 
             (Assert) Assert that the count of the Contents has dropped by 1 (is 4)
             (Assert) Assert that the object reference is no longer in the list.
@@ -24,7 +24,7 @@ namespace XUnitCumulativePractice_Tests
     public class Storage_Tests
     {
         [Fact]
-        public void Addition()
+        public void AdditionOfItem()
         {
             // Arrange
             Item testItem = new Item("Banana");
@@ -34,12 +34,39 @@ namespace XUnitCumulativePractice_Tests
             testStorage.AddItem(testItem);
 
             // Assert
-            //Assert.Equal(1,testStorage.Contents.Count);
+            Assert.Equal(1, testStorage.Contents.Count);
             // Assert
             Assert.Contains(testItem, testStorage.Contents);
         }
+        [Fact]
+        public void RemovalOfItem()
+        {
+            // Arrange
+            Storage testStorage = new Storage();
+
+            Item testItem1 = new Item("Banana");
+            testStorage.AddItem(testItem1);
+            Item testItem2 = new Item("Apple");
+            testStorage.AddItem(testItem2);
+            Item testItem3 = new Item("Orange");
+            testStorage.AddItem(testItem3);
+            Item testItem4 = new Item("Grapes");
+            testStorage.AddItem(testItem4);
+            Item testItem5 = new Item("Kiwi");
+            testStorage.AddItem(testItem5);
+
+            
+            // Act
+            testStorage.RemoveItem();
+
+            // Assert
+            Assert.Equal(4,testStorage.Contents.Count);
+            // Assert
+            Assert.DoesNotContain(testItem5, testStorage.Contents);
+        }
+
+    }   
 
 
-
-    }
 }
+
