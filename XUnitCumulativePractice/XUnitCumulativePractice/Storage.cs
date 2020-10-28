@@ -32,9 +32,6 @@ namespace XUnitCumulativePractice
                 Console.WriteLine(items.Name);
             }
         }
-      
-	
-
 
         public Storage()
         {
