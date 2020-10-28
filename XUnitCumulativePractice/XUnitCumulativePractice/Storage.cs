@@ -15,15 +15,22 @@ namespace XUnitCumulativePractice
     public class Storage
     {
         public List<Item> Contents { get; set; }
-        public string ItemList  { get; set; }
-        Item ItemList = new Item("Apple");
-        public void AddItem()
+        
+        public void AddItem(Item item)
         {
-            Contents.Add(ItemList);
+            Contents.Add(item);
         }
-        public void RemoveItem()
+        public void RemoveItem(Item item)
         {
+            Contents.Remove(item);
+        }
 
+        public void DisplayOutput()
+        {
+            foreach (Item items in Contents)
+            {
+                Console.WriteLine(items.Name);
+            }
         }
       
 	
